@@ -1084,8 +1084,9 @@ namespace Assistant
 
 					try
 					{
-						SetDataPath(Ultima.Files.Directory);
-					}
+                        //SetDataPath(Ultima.Files.Directory);
+                        SetDataPath("");
+                    }
 					catch
 					{
 						SetDataPath( "" );

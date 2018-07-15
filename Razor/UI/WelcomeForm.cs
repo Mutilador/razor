@@ -239,7 +239,7 @@ namespace Assistant
             this.serverInfo.Name = "serverInfo";
             this.serverInfo.Size = new System.Drawing.Size(287, 21);
             this.serverInfo.TabIndex = 12;
-            this.serverInfo.Text = "login.server.com,2593";
+            this.serverInfo.Text = "login.dgshard.com.br,2593";
             this.serverInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // openFile
@@ -505,14 +505,12 @@ namespace Assistant
 	        serverList.BeginUpdate();
 
             // Always add the default UOR servers
-	        serverList.Items.Add(cse = new Custom_SE("UO Renaissance (Prod)", "login.uorenaissance.com", 2593));
+	        serverList.Items.Add(cse = new Custom_SE("Dragon Shard", "187.45.161.102", 2593));
 
 	        if (serverList.SelectedItem == null)
 	        {
 	            serverList.SelectedItem = cse;
 	        }
-
-	        serverList.Items.Add(new Custom_SE("UO Renaissance (Test)", "test.uorenaissance.com", 2597));
 
             // Load any custom servers they might have added
 	        NameValueCollection servers =
@@ -616,6 +614,20 @@ namespace Assistant
 
                     se = new ServerEntry(addr, port);
                 }
+            }else
+            {
+                try
+                {
+                    string[] portAddress = serverList.Text.Split(',');
+                    se = new ServerEntry(portAddress[0], Int32.Parse(portAddress[1]));
+                }
+                catch
+                {
+                    MessageBox.Show("O padrão que tem que ser seguido é 127.0.0.1,2593", "Erro ao digitar o endereço e porta",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                
             }
 
             if (se != null && se.Address != null)
