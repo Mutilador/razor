@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DGRazorInstaller", "DGRazorInstaller\DGRazorInstaller.vdproj", "{6A2A5852-2F12-44C6-8948-76A1C316E583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -47,6 +49,8 @@ Global
 		{5D66ACE6-B2A4-400F-B5A5-24525959AC5C}.Debug|x86.Build.0 = Debug|x86
 		{5D66ACE6-B2A4-400F-B5A5-24525959AC5C}.Release|x86.ActiveCfg = Release|x86
 		{5D66ACE6-B2A4-400F-B5A5-24525959AC5C}.Release|x86.Build.0 = Release|x86
+		{6A2A5852-2F12-44C6-8948-76A1C316E583}.Debug|x86.ActiveCfg = Debug
+		{6A2A5852-2F12-44C6-8948-76A1C316E583}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

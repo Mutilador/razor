@@ -171,6 +171,7 @@ namespace Assistant
             // 
             // serverList
             // 
+            this.serverList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serverList.Location = new System.Drawing.Point(52, 16);
             this.serverList.Name = "serverList";
             this.serverList.Size = new System.Drawing.Size(284, 23);
@@ -239,7 +240,7 @@ namespace Assistant
             this.serverInfo.Name = "serverInfo";
             this.serverInfo.Size = new System.Drawing.Size(287, 21);
             this.serverInfo.TabIndex = 12;
-            this.serverInfo.Text = "login.dgshard.com.br,2593";
+            this.serverInfo.Text = "www.dgshard.com.br";
             this.serverInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // openFile
@@ -315,7 +316,7 @@ namespace Assistant
             this.MinimizeBox = false;
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Welcome to Razor: UOR Community Edition!";
+            this.Text = "Welcome to Razor: DG Shard Community Edition!";
             this.Closing += new System.ComponentModel.CancelEventHandler(this.WelcomeForm_Closing);
             this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.groupBox1.ResumeLayout(false);
@@ -507,25 +508,25 @@ namespace Assistant
             // Always add the default UOR servers
 	        serverList.Items.Add(cse = new Custom_SE("Dragon Shard", "187.45.161.102", 2593));
 
-	        if (serverList.SelectedItem == null)
+            /*if (serverList.SelectedItem == null)
 	        {
 	            serverList.SelectedItem = cse;
-	        }
-
+	        }*/
+      
             // Load any custom servers they might have added
-	        NameValueCollection servers =
-	            (NameValueCollection)ConfigurationManager.GetSection("Servers");
+            /* NameValueCollection servers =
+                 (NameValueCollection)ConfigurationManager.GetSection("Servers");
 
-            foreach (string server in servers.AllKeys)
-	        {
-	            string[] serverHostAndPort = servers[server].Split(',');
-	            string serverHost = serverHostAndPort[0];
-	            string serverPort = serverHostAndPort[1];
+             foreach (string server in servers.AllKeys)
+             {
+                 string[] serverHostAndPort = servers[server].Split(',');
+                 string serverHost = serverHostAndPort[0];
+                 string serverPort = serverHostAndPort[1];
 
-	            serverList.Items.Add(new Custom_SE(server, serverHost, Convert.ToInt32(serverPort)));
-	        }
+                 serverList.Items.Add(new Custom_SE(server, serverHost, Convert.ToInt32(serverPort)));
+             }*/
 
-	        serverList.EndUpdate();
+            serverList.EndUpdate();
 	        serverList.Refresh();
 
             // Set it to the last used one, or just set it to default UOR Prod
@@ -537,6 +538,8 @@ namespace Assistant
 	        {
 	            serverList.SelectedIndex = 0;
 	        }
+
+            serverList.SelectedIndex = 0;
 
             WindowState = FormWindowState.Normal;
 	        this.BringToFront();
@@ -584,9 +587,9 @@ namespace Assistant
 		{
 		    Custom_SE server = (Custom_SE) serverList.SelectedItem;
 
-		    serverInfo.Text = $"{server.RealAddress},{server.Port}";
+		    serverInfo.Text = "www.dgshard.com.br";
 		}
-		
+
 		private void okay_Click(object sender, System.EventArgs e)
 		{
             m_PatchEncy = patchEncy.Checked;

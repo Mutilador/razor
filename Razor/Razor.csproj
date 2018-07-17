@@ -7,10 +7,10 @@
     <ProjectGuid>{B24E4FB1-4936-4544-9E88-F3FF9B04FDBA}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>UI\App.ico</ApplicationIcon>
+    <ApplicationIcon>UI\DGShard.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Razor</AssemblyName>
+    <AssemblyName>DG Razor</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -385,6 +385,9 @@
     <EmbeddedResource Include="UI\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Resources\%24this.BackgroundImage.bmp" />
+    <Content Include="UI\DGShard.ico" />
+    <Content Include="UI\icon32x20.png" />
     <Content Include="UI\Lock.ico" />
     <Content Include="UI\UOPS.ico" />
   </ItemGroup>
@@ -409,6 +412,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Razor.manifest" />
   </ItemGroup>
